@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+.animate-text-paragraph::before {
+  position: relative;
+  content: "influencers";
+  animation: loop-text 20s infinite;
+}
+
+@keyframes loop-text {
+  0% {
+    top: 16px;
+    opacity: 0;
+    content: "influencers.";
+  }
+
+  4.444% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  12.222% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  16.666% {
+    top: 16px;
+    opacity: 0;
+    content: "influencers.";
+  }
+
+  16.667% {
+    top: 16px;
+    opacity: 0;
+    content: "creators.";
+  }
+
+  21.111% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  28.888% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  33.333% {
+    top: 16px;
+    opacity: 0;
+    content: "creators.";
+  }
+
+  33.334% {
+    top: 16px;
+    opacity: 0;
+    content: "athletes.";
+  }
+
+  37.777% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  45.555% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  49.999% {
+    top: 16px;
+    opacity: 0;
+    content: "athletes.";
+  }
+
+  50% {
+    top: 16px;
+    opacity: 0;
+    content: "artists.";
+  }
+
+  54.444% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  62.222% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  66.666% {
+    top: 16px;
+    opacity: 0;
+    content: "artists.";
+  }
+
+  66.667% {
+    top: 16px;
+    opacity: 0;
+    content: "activists.";
+  }
+
+  71.111% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  78.888% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  83.333% {
+    top: 16px;
+    opacity: 0;
+    content: "activists.";
+  }
+
+  83.334% {
+    top: 16px;
+    opacity: 0;
+    content: "leaders.";
+  }
+
+  87.777% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  95.555% {
+    top: 0px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 16px;
+    opacity: 0;
+    content: "leaders.";
+  }
+}
+
+@property --price {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+.animate-stock-price::before {
+  counter-set: price var(--price);
+  content: counter(price);
+  animation: loop-stock-price 30s ease infinite;
+}
+
+@keyframes loop-stock-price {
+  0% {
+    --price: 0;
+  }
+
+  10% {
+    --price: 10;
+  }
+
+  15% {
+    --price: 14;
+  }
+
+  20% {
+    --price: 26;
+  }
+
+  25% {
+    --price: 28;
+  }
+
+  30% {
+    --price: 38;
+  }
+
+  35% {
+    --price: 33;
+  }
+
+  40% {
+    --price: 32;
+  }
+
+  45% {
+    --price: 43;
+  }
+
+  50% {
+    --price: 46;
+  }
+
+  55% {
+    --price: 39;
+  }
+
+  60% {
+    --price: 53;
+  }
+
+  65% {
+    --price: 64;
+  }
+
+  70% {
+    --price: 60;
+  }
+
+  75% {
+    --price: 76;
+  }
+
+  80% {
+    --price: 74;
+  }
+
+  85% {
+    --price: 81;
+  }
+
+  90% {
+    --price: 100;
+  }
+
+  100% {
+    --price: 120;
+  }
+}
+
+.animate-stock-container {
+  animation: loop-stock-position 30s ease infinite;
+  left: -12.5%;
+  bottom: 0%;
+}
+
+@keyframes loop-stock-position {
+  0% {
+    left: -12.5%;
+    bottom: 0%;
+  }
+
+  10% {
+    left: 0%;
+    bottom: 10%;
+  }
+
+  15% {
+    left: 6.25%;
+    bottom: 14%;
+  }
+
+  20% {
+    left: 12.5%;
+    bottom: 26%;
+  }
+
+  25% {
+    left: 18.75%;
+    bottom: 28%;
+  }
+
+  30% {
+    left: 25%;
+    bottom: 38%;
+  }
+
+  35% {
+    left: 31.25%;
+    bottom: 33%;
+  }
+
+  40% {
+    left: 37.5%;
+    bottom: 32%;
+  }
+
+  45% {
+    left: 43.75%;
+    bottom: 43%;
+  }
+
+  50% {
+    left: 50%;
+    bottom: 46%;
+  }
+
+  55% {
+    left: 56.25%;
+    bottom: 39%;
+  }
+
+  60% {
+    left: 62.5%;
+    bottom: 53%;
+  }
+
+  65% {
+    left: 68.75%;
+    bottom: 64%;
+  }
+
+  70% {
+    left: 75%;
+    bottom: 60%;
+  }
+
+  75% {
+    left: 81.25%;
+    bottom: 76%;
+  }
+
+  80% {
+    left: 87.5%;
+    bottom: 74%;
+  }
+
+  85% {
+    left: 93.75%;
+    bottom: 81%;
+  }
+
+  90% {
+    left: 100%;
+    bottom: 100%;
+  }
+
+  100% {
+    left: 112.5%;
+    bottom: 120%;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
