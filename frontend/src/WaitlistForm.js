@@ -6,18 +6,8 @@ function WaitlistForm({animate}) {
   const [email, setEmail] = useState('');
 
   const handleSubmitEmail = () => {
-    const url = `https://api.sendpulse.com/addressbooks/${process.env.REACT_APP_MAILING_LIST_ID}/emails`;
-    const body = {
-      'emails': [
-        {
-          'email': email,
-          'variables': {
-            'time': Date.now()
-          }
-        }
-      ]
-    };
-    axios.post(url, body).then(console.log);
+    const body = { email }
+    axios.post('/api/waitlist', body).then(console.log);
   }
 
   return (
