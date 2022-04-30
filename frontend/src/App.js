@@ -5,7 +5,7 @@ import GraphImage from './GraphImage'
 
 function App() {
   return (
-    <div className='absolute w-full h-full bg-gradient-to-br from-[#29d2a8] via-[#3366ff] to-[#5934dd]'>
+    <div className='absolute w-full h-full bg-gradient-to-br from-[#33A9FF] via-[#3366ff] to-[#3f34dd]'>
       <div className='absolute w-full h-full bottom-0 left-0'>
         <GraphImage />
       </div>
