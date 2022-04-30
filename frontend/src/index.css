@@ -150,14 +150,17 @@
   }
 }
 
+/*
+
 @property --price {
   syntax: '<integer>';
   initial-value: 0;
-  inherits: false;
+  inherits: true;
 }
 
 .animate-stock-price::before {
   counter-set: price var(--price);
+  content: counter(price);
   animation: loop-stock-price 30s ease infinite;
 }
 
@@ -238,6 +241,8 @@
     --price: 120;
   }
 }
+
+*/
 
 .animate-stock-container {
   animation: loop-stock-position 30s ease infinite;
