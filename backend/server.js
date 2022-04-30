@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 
 require('dotenv').config();
 
@@ -9,6 +10,7 @@ const TOKEN_STORAGE = "/tmp/";
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+app.use(cors({ origin: "http://socialhelix.sh/*", optionsSuccessStatus: 200 }));
 app.use(express.json());
 
 app.post('/api/waitlist', (req, res) => {
