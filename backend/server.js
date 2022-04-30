@@ -1,5 +1,4 @@
 const express = require('express');
-const sendpulse = require("sendpulse-api");
 
 require('dotenv').config();
 
@@ -42,3 +41,5 @@ app.post('/api/waitlist', (req, res) => {
     }, process.env.MAILING_LIST_ID, emailData);
   });
 }); 
+
+module.exports = app;
