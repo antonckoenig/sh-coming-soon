@@ -158,7 +158,6 @@
 
 .animate-stock-price::before {
   counter-set: price var(--price);
-  content: counter(price);
   animation: loop-stock-price 30s ease infinite;
 }
 
