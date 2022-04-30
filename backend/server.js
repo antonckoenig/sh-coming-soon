@@ -1,5 +1,4 @@
 const express = require('express');
-const sendpulse = require("sendpulse-api");
 
 require('dotenv').config();
 
