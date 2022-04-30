@@ -12,7 +12,7 @@ function WaitlistForm() {
 
   const handleSubmitEmail = () => {
     const body = { email }
-    axios.defaults.baseURL = "https://sh-coming-soon-backend-r7yehwema-socialhelix.vercel.app"
+    axios.defaults.baseURL = "https://api.socialhelix.sh";
     axios.post('/api/waitlist', body).then(console.log);
   }
 
