@@ -3,13 +3,13 @@
 <path d="M812.5 240L750 400L687.5 360L625 470L562.5 610L500 540L437.5 570L375 680L312.5 670L250 620L187.5 720L125 740L62.5 860L0 900V1000H1000V0L937.5 190L875 260L812.5 240Z" fill="white" fill-opacity="0.15" shape-rendering="crispEdges"/>
 </g>
 <defs>
-<filter id="filter0_d_124_6" x="-14" y="-16" width="1022" height="1022" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_124_6" x="-15" y="-17" width="1024" height="1024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-3" dy="-5"/>
-<feGaussianBlur stdDeviation="5.5"/>
+<feGaussianBlur stdDeviation="6"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_124_6"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_124_6" result="shape"/>
 </filter>

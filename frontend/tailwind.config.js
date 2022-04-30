@@ -6,6 +6,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+      'xxs': '375px',
       'xs': '480px',
       ...defaultTheme.screens,
       'wd': { 'raw': '(max-height: 750px) and (min-width: 1024px)' },
