@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div className='absolute w-full h-full bg-gradient-to-br from-[#33A9FF] via-[#3366ff] to-[#450FDF]'>
+    <div className='absolute w-full h-full bg-gradient-to-br from-[#33A9FF] via-[#3366ff] to-[#344ce8]'>
       <div className='absolute w-full h-full bottom-0 left-0'>
         <GraphImage animate={animate} />
       </div>
