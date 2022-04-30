@@ -8,8 +8,9 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/api/waitlist",
+            "dest": "/server.js",
+            "methods": ["POST"]
         }
     ]
   }
