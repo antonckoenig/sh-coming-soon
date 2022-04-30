@@ -18,7 +18,7 @@
 
 @keyframes loop-text {
   0% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "influencers.";
   }
@@ -34,13 +34,13 @@
   }
 
   16.666% {
-    top: 16px;
+    top: 10px;
     opacity: 0;
     content: "influencers.";
   }
 
   16.667% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "creators.";
   }
@@ -56,13 +56,13 @@
   }
 
   33.333% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "creators.";
   }
 
   33.334% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "athletes.";
   }
@@ -78,13 +78,13 @@
   }
 
   49.999% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "athletes.";
   }
 
   50% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "artists.";
   }
@@ -100,13 +100,13 @@
   }
 
   66.666% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "artists.";
   }
 
   66.667% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "activists.";
   }
@@ -122,13 +122,13 @@
   }
 
   83.333% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "activists.";
   }
 
   83.334% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "leaders.";
   }
@@ -144,7 +144,7 @@
   }
 
   100% {
-    top: 16px;
+    top: 8px;
     opacity: 0;
     content: "leaders.";
   }
@@ -159,7 +159,7 @@
 .animate-stock-price::before {
   counter-set: price var(--price);
   content: counter(price);
-  animation: loop-stock-price 30s ease infinite;
+  animation: loop-stock-price 40s ease infinite;
 }
 
 @keyframes loop-stock-price {
@@ -241,7 +241,7 @@
 }
 
 .animate-stock-container {
-  animation: loop-stock-position 30s ease infinite;
+  animation: loop-stock-position 40s ease infinite;
   left: -12.5%;
   bottom: 0%;
 }

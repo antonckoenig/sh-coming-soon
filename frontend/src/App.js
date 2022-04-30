@@ -20,13 +20,13 @@ function App() {
       <div className='absolute w-full h-full bottom-0 left-0'>
         <GraphImage animate={animate} />
       </div>
-      <div className='relative w-full h-28'>
+      <div className='relative w-full 2xl:h-28 lg:h-24 h-20'>
         <Header />
       </div>
-      <div className='relative w-full h-[calc(100%-14rem)]'>
+      <div className='relative w-full 2xl:h-[calc(100%-14rem)] lg:h-[calc(100%-12rem)] h-[calc(100%-10rem)]'>
         <WaitlistForm animate={animate} />
       </div>
-      <div className='relative w-full h-28'>
+      <div className='relative w-full 2xl:h-28 lg:h-24 h-20'>
         <Footer />
       </div>
     </div>
