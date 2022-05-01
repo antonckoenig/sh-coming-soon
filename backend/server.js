@@ -32,6 +32,7 @@ function runMiddleware(req, res, fn) {
 }
 
 app.post('/api/waitlist', (req, res) => {
+  return res.status(200).json({message: 'Evan'});
   //await runMiddleware(req, res, cors);
 
   const email = req.body.email;
