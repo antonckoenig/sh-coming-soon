@@ -36,6 +36,8 @@ app.post('/api/waitlist', (req, res) => {
 
   const email = req.body.email;
 
+  res.status(200).json({message: 'test result'})
+
   if (!email) {
     return res.status(400).json({message: `Invalid email: ${process.env.API_USER_ID}`});
   }
