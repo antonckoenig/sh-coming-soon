@@ -3,7 +3,7 @@ const NextCors = require('nextjs-cors');
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
-        return res.status(405).send({ message: `Invalid method: ${req.method}. Only POST requests allowed. ${process.env.MAILING_LIST_ID}`});
+        return res.status(405).send({ message: `Invalid method: ${req.method}. Only POST requests allowed.`});
     }
     /** Run the cors middleware
     // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         }
     ];
 
-    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, process.env.TOKEN_STORAGE, function() {
+    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, 'file', function() {
         sendpulse.addEmails(data => {
             if (data !== undefined) {
                 if (data.result === true) {
