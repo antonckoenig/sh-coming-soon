@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         }
     ];
 
-    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, undefined, function() {
+    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, '', function() {
         sendpulse.addEmails(data => {
             if (data !== undefined) {
                 if (data.result === true) {
