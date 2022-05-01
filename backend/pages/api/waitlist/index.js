@@ -1,4 +1,3 @@
-const sendpulse = require("sendpulse-api");
 const NextCors = require('nextjs-cors');
 
 export default async function handler(req, res) {
@@ -20,7 +19,17 @@ export default async function handler(req, res) {
         return res.status(400).json({message: `Invalid email`});
     }
 
-    const emailData = [
+    const oauthReqBody = {
+        "grant_type": "client_credentials",
+        "client_id": process.env.API_USER_ID,
+        "client_secret": process.env.API_SECRET
+    }
+
+    const oauthResponse = await axios.post("/oauth/access_token", oauthReqBody);
+
+    axios.defaults.baseURL = "https://api.sendpulse.com";
+
+    const emails = [
         {
         email: email,
             variables: {
@@ -28,17 +37,22 @@ export default async function handler(req, res) {
             }
         }
     ];
-
-    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, '', function() {
-        sendpulse.addEmails(data => {
-            if (data !== undefined) {
-                if (data.result === true) {
-                    return res.status(200).json({message: 'Success'});
-                } else if (data.result === false) {
-                    return res.status(400).json({message: 'Email is already registered'});
-                }
-            }
-            return res.status(200).json({message: 'Internal server error'});
-        }, process.env.MAILING_LIST_ID, emailData);
-    });
+    
+    const doubleOptReqBody = {
+        "emails": emails,
+        "confirmation": "force",
+        "sender_email": "admin@socialhelix.sh",
+        "template_id": "a3e45169-7ae7-4a39-b457-72fd04401f2l",
+        "message_lang": "en"
+    }
+    
+    const data = await axios.post(`addressbooks/${process.env.MAILING_LIST_ID}/email`, doubleOptReqBody);
+    if (data !== undefined) {
+        if (data.result === true) {
+            return res.status(200).json({message: 'Success'});
+        } else if (data.result === false) {
+            return res.status(400).json({message: 'Email is already registered'});
+        }
+    }
+    return res.status(200).json({message: 'Internal server error'});
 }   
