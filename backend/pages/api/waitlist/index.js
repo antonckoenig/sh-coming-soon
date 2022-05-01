@@ -1,27 +1,16 @@
 const sendpulse = require("sendpulse-api");
-const Cors = require('cors')
+const NextCors = require('nextjs-cors');
 
-const cors = Cors({
-    methods: ['POST', 'GET', 'HEAD'],
-  })
-  
-  // Helper method to wait for a middleware to execute before continuing
-  // And to throw an error when an error happens in a middleware
-  function runMiddleware(req, res, fn) {
-    return new Promise((resolve, reject) => {
-      fn(req, res, (result) => {
-        if (result instanceof Error) {
-          return reject(result)
-        }
-  
-        return resolve(result)
-      })
-    })
-  }
-  
+async function handler(req, res) {
+    // Run the cors middleware
+    // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
+    await NextCors(req, res, {
+        // Options
+        methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+        origin: '*',
+        optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    });
 
-export default async function waitlist(req, res) {
-    await runMiddleware(req, res, cors);
     const email = req.body.email;
 
     if (!email) {
