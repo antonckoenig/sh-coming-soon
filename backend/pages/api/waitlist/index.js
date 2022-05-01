@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     const email = req.body.email;
 
     if (!email) {
-        return res.status(400).json({message: 'Invalid email'});
+        return res.status(400).json({message: `Invalid email: ${process.env.TOKEN_STORAGE}`});
     }
 
     const emailData = [
