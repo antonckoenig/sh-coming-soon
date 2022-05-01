@@ -3,7 +3,7 @@ const NextCors = require('nextjs-cors');
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
-        return res.status(405).send({ message: `Invalid method: ${req.method}. Only POST requests allowed.`});
+        return res.status(405).send({ message: `Invalid method: ${req.method}. Only POST requests allowed. ${process.env.TOKEN_STORAGE}`});
     }
     /** Run the cors middleware
     // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     const email = req.body.email;
 
     if (!email) {
-        return res.status(400).json({message: `Invalid email: ${process.env.TOKEN_STORAGE}`});
+        return res.status(400).json({message: `Invalid email`});
     }
 
     const emailData = [
