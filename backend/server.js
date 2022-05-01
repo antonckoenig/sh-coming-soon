@@ -32,8 +32,8 @@ function runMiddleware(req, res, fn) {
 }
 
 app.post('/api/waitlist', (req, res) => {
-  await runMiddleware(req, res, cors);
-  
+  //await runMiddleware(req, res, cors);
+
   const email = req.body.email;
 
   if (!email) {
