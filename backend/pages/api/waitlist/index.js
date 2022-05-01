@@ -5,14 +5,14 @@ export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).send({ message: `Invalid method: ${req.method}. Only POST requests allowed.`});
     }
-    // Run the cors middleware
+    /** Run the cors middleware
     // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
     await NextCors(req, res, {
         // Options
         methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
         origin: '*',
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-    });
+    }); */
 
     const email = req.body.email;
 
