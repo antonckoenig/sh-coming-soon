@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         }
     ];
 
-    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, TOKEN_STORAGE, function() {
+    sendpulse.init(process.env.API_USER_ID, process.env.API_SECRET, process.env.TOKEN_STORAGE, function() {
         sendpulse.addEmails(data => {
             if (data !== undefined) {
                 if (data.result === true) {
