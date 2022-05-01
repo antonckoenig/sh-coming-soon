@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors')
+const Cors = require('cors')
 
 require('dotenv').config();
 
@@ -10,27 +10,30 @@ const TOKEN_STORAGE = "/tmp/";
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use(cors({ origin: "http://socialhelix.sh/*", optionsSuccessStatus: 200 }));
 app.use(express.json());
+// Initializing the cors middleware
 
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  )
-  if (req.method === 'OPTIONS') {
-    res.status(200).end()
-    return
-  }
-  return await fn(req, res)
+const cors = Cors({
+  methods: ['POST', 'GET', 'HEAD'],
+})
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
 }
 
-app.post('/api/waitlist', allowCors, (req, res) => {
+app.post('/api/waitlist', (req, res) => {
+  await runMiddleware(req, res, cors);
+  
   const email = req.body.email;
 
   if (!email) {
