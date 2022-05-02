@@ -1,5 +1,5 @@
-const NextCors = require('nextjs-cors');
-const axios = require('axios');
+import NextCors from 'nextjs-cors';
+import axios from 'axios';
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -25,28 +25,32 @@ export default async function handler(req, res) {
         "client_secret": process.env.API_SECRET
     }
 
-    const oauthResponse = await axios.post("/oauth/access_token", oauthReqBody);
+    const oauthResponse = await axios.post("https://api.sendpulse.com/oauth/access_token", oauthReqBody);
+    const token = oauthResponse.data.access_token;
 
-    axios.defaults.baseURL = "https://api.sendpulse.com";
+    console.log(token);
 
     const emails = [
         {
-        email: email,
+            email: email,
             variables: {
                 time: new Date(Date.now()).toLocaleString()
             }
         }
     ];
+
+    const config = {
+        headers: {
+            "Authorization": "Bearer " + token
+        }
+    }
     
     const doubleOptReqBody = {
         "emails": emails,
-        "confirmation": "force",
-        "sender_email": "admin@socialhelix.sh",
-        "template_id": "a3e45169-7ae7-4a39-b457-72fd04401f2l",
-        "message_lang": "en"
     }
     
-    const data = await axios.post(`addressbooks/${process.env.MAILING_LIST_ID}/email`, doubleOptReqBody);
+    const data = (await axios.post(`https://api.sendpulse.com/addressbooks/${process.env.MAILING_LIST_ID}/emails`, doubleOptReqBody, config)).data;
+    
     if (data !== undefined) {
         if (data.result === true) {
             return res.status(200).json({message: 'Success'});
@@ -54,5 +58,6 @@ export default async function handler(req, res) {
             return res.status(400).json({message: 'Email is already registered'});
         }
     }
-    return res.status(200).json({message: 'Internal server error'});
+
+    return res.status(500).json({message: 'Internal server error'});
 }   
