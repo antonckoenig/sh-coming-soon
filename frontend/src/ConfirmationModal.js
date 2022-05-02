@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import { IoMdClose } from 'react-icons/io';
 
