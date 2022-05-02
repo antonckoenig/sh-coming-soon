@@ -21,6 +21,11 @@
     opacity: 0;
   }
 
+  0.111% {
+    top: 8px;
+    opacity: 0;
+  }
+
   4.444% {
     top: 0px;
     opacity: 1;
@@ -31,12 +36,12 @@
     opacity: 1;
   }
 
-  16.666% {
+  16.555% {
     top: 8px;
     opacity: 0;
   }
 
-  16.667% {
+  16.777% {
     top: 8px;
     opacity: 0;
   }
@@ -51,12 +56,12 @@
     opacity: 1;
   }
 
-  33.333% {
+  33.222% {
     top: 8px;
     opacity: 0;
   }
 
-  33.334% {
+  33.444% {
     top: 8px;
     opacity: 0;
   }
@@ -71,12 +76,12 @@
     opacity: 1;
   }
 
-  49.999% {
+  49.888% {
     top: 8px;
     opacity: 0;
   }
 
-  50% {
+  50.111% {
     top: 8px;
     opacity: 0;
   }
@@ -91,12 +96,12 @@
     opacity: 1;
   }
 
-  66.666% {
+  66.555% {
     top: 8px;
     opacity: 0;
   }
 
-  66.667% {
+  66.777% {
     top: 8px;
     opacity: 0;
   }
@@ -111,12 +116,12 @@
     opacity: 1;
   }
 
-  83.333% {
+  83.222% {
     top: 8px;
     opacity: 0;
   }
 
-  83.334% {
+  83.444% {
     top: 8px;
     opacity: 0;
   }
@@ -129,6 +134,11 @@
   95.555% {
     top: 0px;
     opacity: 1;
+  }
+
+  99.888% {
+    top: 8px;
+    opacity: 0;
   }
 
   100% {
