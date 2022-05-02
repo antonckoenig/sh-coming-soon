@@ -34,24 +34,24 @@ function ConfirmationModal({email, modalState, setModalState}) {
         <IoMdClose onClick={() => setModalState(0)} className='mx-auto' />
       </div>
       <div className='w-full'>
-        <h1 className='mr-10 p-4 font-semibold text-xl'>
-          {modalState === 1 ? 'Thanks for your interest!' : 'Registration failed :('}
+        <h1 className='mr-10 p-5 font-semibold text-xl'>
+          {modalState === 1 ? 'Thank you!' : 'Registration failed :('}
         </h1>
         <div className='w-full h-[1px] bg-gray-300' />
         {modalState === 1 ?
           <>
-            <p className='p-4 text-base'>
-              You have been officially registered to the SocialHelix waitlist with the following email:
+            <p className='p-5 text-base'>
+              You've officially registered for the SocialHelix waitlist with the following email:
             </p>
-            <p className='px-4 pb-4 text-base text-center text-[#3366ff]'>
+            <p className='px-5 pb-4 text-base text-center text-[#3366ff]'>
               {email}
             </p>
-            <p className='px-4 pb-4 text-base'>
+            <p className='px-5 pb-4 text-base'>
               A confirmation email should arrive in your inbox shortly. If you can't find it, check your spam folder.
             </p>
           </>
         :
-          <p className='p-4 text-base'>
+          <p className='p-5 text-base'>
             Make sure that you entered a valid email.
           </p>
         }
