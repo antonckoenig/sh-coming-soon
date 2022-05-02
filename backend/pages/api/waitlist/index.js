@@ -28,8 +28,6 @@ export default async function handler(req, res) {
     const oauthResponse = await axios.post("https://api.sendpulse.com/oauth/access_token", oauthReqBody);
     const token = oauthResponse.data.access_token;
 
-    console.log(token);
-
     const emails = [
         {
             email: email,
