@@ -45,9 +45,6 @@ export default async function handler(req, res) {
     
     const doubleOptReqBody = {
         "emails": emails,
-        "confirmation": "force",
-        "sender_email": "admin@socialhelix.sh",
-        "message_lang": "en"
     }
     
     const data = (await axios.post(`https://api.sendpulse.com/addressbooks/${process.env.MAILING_LIST_ID}/emails`, doubleOptReqBody, config)).data;
