@@ -28,7 +28,7 @@ function WaitlistForm({email, setEmail, setModalState}) {
 
       previousOpacityChange.current = opacityChange
       previousOpacity.current = opacity;
-    }, 30);
+    }, 50);
     return () => clearInterval(interval);
   }, []);
 
