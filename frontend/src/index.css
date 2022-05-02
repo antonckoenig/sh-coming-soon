@@ -10,9 +10,8 @@
   }
 }
 
-.animate-text-paragraph::before {
+.animate-text-paragraph {
   position: relative;
-  content: "influencers";
   animation: loop-text 20s infinite;
 }
 
@@ -20,7 +19,6 @@
   0% {
     top: 8px;
     opacity: 0;
-    content: "influencers.";
   }
 
   4.444% {
@@ -34,15 +32,13 @@
   }
 
   16.666% {
-    top: 10px;
+    top: 8px;
     opacity: 0;
-    content: "influencers.";
   }
 
   16.667% {
     top: 8px;
     opacity: 0;
-    content: "creators.";
   }
 
   21.111% {
@@ -58,13 +54,11 @@
   33.333% {
     top: 8px;
     opacity: 0;
-    content: "creators.";
   }
 
   33.334% {
     top: 8px;
     opacity: 0;
-    content: "athletes.";
   }
 
   37.777% {
@@ -80,13 +74,11 @@
   49.999% {
     top: 8px;
     opacity: 0;
-    content: "athletes.";
   }
 
   50% {
     top: 8px;
     opacity: 0;
-    content: "artists.";
   }
 
   54.444% {
@@ -102,13 +94,11 @@
   66.666% {
     top: 8px;
     opacity: 0;
-    content: "artists.";
   }
 
   66.667% {
     top: 8px;
     opacity: 0;
-    content: "activists.";
   }
 
   71.111% {
@@ -124,13 +114,11 @@
   83.333% {
     top: 8px;
     opacity: 0;
-    content: "activists.";
   }
 
   83.334% {
     top: 8px;
     opacity: 0;
-    content: "leaders.";
   }
 
   87.777% {
@@ -146,7 +134,6 @@
   100% {
     top: 8px;
     opacity: 0;
-    content: "leaders.";
   }
 }
 
