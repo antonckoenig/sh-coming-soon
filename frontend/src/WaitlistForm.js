@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import validator from 'validator';
 //import sendpulse from 'sendpulse-api';
 
-function WaitlistForm() {
-  const [email, setEmail] = useState('');
+function WaitlistForm({email, setEmail, setModalState}) {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -11,9 +11,19 @@ function WaitlistForm() {
   }, []);
 
   const handleSubmitEmail = () => {
-    const body = { email }
-    axios.defaults.baseURL = "https://api.socialhelix.sh";
-    axios.post('/api/waitlist', body).then(console.log);
+    if (!email || !validator.isEmail(email)) {
+      setModalState(2);
+    } else {
+      const body = { email }
+
+      axios.defaults.baseURL = "https://api.socialhelix.sh";
+
+      axios.post('/api/waitlist', body).then(res => {
+        setModalState(1);
+      }).catch(() => {
+        setModalState(2);
+      });
+    }
   }
 
   return (
