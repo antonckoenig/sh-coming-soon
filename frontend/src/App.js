@@ -7,6 +7,7 @@ import ConfirmationModal from './ConfirmationModal';
 
 function App() {
   const [email, setEmail] = useState('');
+  const [referral, setReferral] = useState()
   const [modalState, setModalState] = useState(0);
   
   return (
