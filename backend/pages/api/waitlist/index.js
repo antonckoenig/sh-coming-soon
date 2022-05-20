@@ -14,6 +14,8 @@ export default async function handler(req, res) {
     }
 
     const email = req.body.email;
+    const referral = req.body.referral;
+    const hasReferral = referral == undefined || referral.length == 0;
 
     if (!email) {
         return res.status(400).json({message: `Invalid email`});
@@ -32,6 +34,7 @@ export default async function handler(req, res) {
         {
             email: email,
             variables: {
+                referredBy: referral,
                 time: new Date(Date.now()).toLocaleString()
             }
         }
@@ -47,15 +50,32 @@ export default async function handler(req, res) {
         "emails": emails,
     }
     
+    // Add new email to list
     const data = (await axios.post(`https://api.sendpulse.com/addressbooks/${process.env.MAILING_LIST_ID}/emails`, doubleOptReqBody, config)).data;
     
-    if (data !== undefined) {
+    if(data !== undefined) {
         if (data.result === true) {
+            if(hasReferral) {
+                const referralData = await axios.post(`https://api.sendpulse.com/addressbooks/${process.env.MAILING_LIST_ID}/emails/${referral}`);
+                console.log(referralData);
+                if(referralData !== undefined) {
+                    // Update referralCount in the address book
+                    const incrementResult = axios.post(`https://api.sendpulse.com/addressbooks/${process.env.MAILING_LIST_ID}/emails/variable`, referral, {
+                        // Increment referralCount by 1
+                        referralCount: referralData.variables.referralCount + 1
+                    }); 
+                    if(incrementResult !== undefined) {
+                        if (incrementResult.result === true) {
+                            return res.status(200).json({message: 'Success'});
+                        }
+                    }
+                } 
+            }
             return res.status(200).json({message: 'Success'});
         } else if (data.result === false) {
             return res.status(400).json({message: 'Email is already registered'});
         }
     }
-
+    
     return res.status(500).json({message: 'Internal server error'});
 }   

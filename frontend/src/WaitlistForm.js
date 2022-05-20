@@ -5,7 +5,7 @@ import validator from 'validator';
 
 const words = ['influencers', 'creators', 'athletes', 'artists', 'activists', 'leaders'];
 
-function WaitlistForm({email, setEmail, setModalState}) {
+function WaitlistForm({email, setEmail, referral, setReferral, setModalState}) {
   const [loading, setLoading] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [index, setIndex] = useState(0);

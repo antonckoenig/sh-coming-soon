@@ -7,8 +7,8 @@ import ConfirmationModal from './ConfirmationModal';
 
 function App() {
   const [email, setEmail] = useState('');
-  const [referral, setReferral] = useState()
   const [modalState, setModalState] = useState(0);
+  const referral = '';
   
   return (
     <div className='absolute w-full h-full bg-gradient-to-br from-[#33A9FF] via-[#3366ff] to-[#344ce8]'>
@@ -19,7 +19,7 @@ function App() {
         <Header />
       </div>
       <div className='relative w-full 2xl:h-[calc(100%-14rem)] lg:h-[calc(100%-12rem)] sh:h-[calc(100%-10rem)] h-[calc(100%-10rem)]'>
-        <WaitlistForm email={email} setEmail={setEmail} setModalState={setModalState} />
+        <WaitlistForm email={email} setEmail={setEmail} referral={referral} setModalState={setModalState} />
       </div>
       <div className='relative w-full 2xl:h-28 lg:h-24 sh:h-20 h-20'>
         <Footer />
