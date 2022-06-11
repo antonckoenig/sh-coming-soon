@@ -1044,6 +1044,14 @@ button,input,select,textarea,label{
     background-image:url("../images/hero-bg-bottom.svg");
     background-size:720px 173px
 }
+@media screen and (min-width: 1441px) {
+    .hero::before{
+        display: none;
+    }
+    .hero::after{
+        display: none;
+    }
+}
 .hero-inner{
     position:relative;
     z-index:1
