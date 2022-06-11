@@ -1032,26 +1032,6 @@ button,input,select,textarea,label{
     width:720px;
     background-repeat:no-repeat
 }
-.hero::before{
-    top:0;
-    height:159px;
-    background-image:url("../images/hero-bg-top.svg");
-    background-size:720px 159px
-}
-.hero::after{
-    bottom:42%;
-    height:173px;
-    background-image:url("../images/hero-bg-bottom.svg");
-    background-size:720px 173px
-}
-@media screen and (min-width: 1441px) {
-    .hero::before{
-        opacity: 0 !important;
-    }
-    .hero::after{
-        opacity: 0 !important;
-    }
-}
 .hero-inner{
     position:relative;
     z-index:1
