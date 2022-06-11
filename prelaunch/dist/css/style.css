@@ -1046,10 +1046,10 @@ button,input,select,textarea,label{
 }
 @media screen and (min-width: 1441px) {
     .hero::before{
-        opacity: 0;
+        opacity: 0 !important;
     }
     .hero::after{
-        opacity: 0;
+        opacity: 0 !important;
     }
 }
 .hero-inner{
